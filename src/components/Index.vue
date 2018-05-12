@@ -1,6 +1,27 @@
 <template>
   <div class="index container">
     <div class="row">
+
+      <!-- SEEDS -->
+      <div class="col s12 m6 l4" v-for="gem in seeds" :key="gem.id">
+        <div class="card kartu">
+          <div class="card-content">
+            <i class="material-icons bintang">star</i>
+            <h2 class="indigo-text">{{ gem.title }}</h2>
+            <ul class="ingredients">
+              <li v-for="(ing, index) in gem.ingredients" :key="index">
+                <span class="chip">{{ ing }}</span>
+              </li>
+            </ul>
+          </div>
+          <span class="btn-floating btn-large halfway-fab pink" @click="WAGems(gem)">
+              <i class="material-icons edit">share</i
+            </router-link>
+          </span>
+        </div>
+      </div>
+
+      <!-- FIREBASE -->
       <div class="col s12 m6 l4" v-for="gem in gems" :key="gem.id">
         <div class="card kartu">
           <div class="card-content">
@@ -30,7 +51,46 @@
     name: 'Index',
     data () {
       return {
-        gems: []
+        gems: [],
+        seeds: [
+          {
+            title: '10 Things That Require Zero Talent',
+            slug: '10-things-that-require-zero-talent',
+            ingredients: [
+              'Being On Time',
+              'Work Ethic',
+              'Effort',
+              'Body Language',
+              'Energy',
+              'Attitude',
+              'Passion',
+              'Being Coachable',
+              'Doing Extra',
+              'Being Prepared'
+            ]
+          },
+          {
+            title: 'Discover Various Personality Type',
+            slug: 'discover-various-personality-type',
+            ingredients: [
+              'Sanguine',
+              'Phlegmatic',
+              'Choleric',
+              'Melancholic'
+            ]
+          },
+          {
+            title: 'Understand 5 Love Languages',
+            slug: 'understand-5-love-languages',
+            ingredients: [
+              'Words of Affirmation',
+              'Acts of Service',
+              'Receiving Gifts',
+              'Quality Time',
+              'Physical Touch'
+            ]
+          }
+        ]
       }
     },
     methods: {
@@ -42,6 +102,19 @@
               return gem.id !== id
           })
         })
+      },
+      WAGems (gem) {
+        let title = gem.title;
+        let ingredients = gem.ingredients;
+        let listGem = '';
+
+        ingredients.map(item => {
+          listGem += '• ' + item + '\n'
+        })
+
+        let urlencodedtext = encodeURIComponent('*' + title + '* \n \n' + listGem + '\n \n' + '_Source:_ \n' + '*LifeGems* \n' + 'https://goo.gl/sT2qMT');
+        let whatsapp_url = "https://api.whatsapp.com/send?text=" + urlencodedtext;
+        window.open(whatsapp_url, '_blank');
       }
     },
     created () {
@@ -100,5 +173,14 @@
 
   .kartu {
     margin-bottom: 60px;
+  }
+
+  .index .bintang {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    cursor: pointer;
+    color: orange;
+    font-size: 1.4em;
   }
 </style>

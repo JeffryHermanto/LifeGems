@@ -12,7 +12,10 @@
       </div>
       <div class="field add-ingredient">
         <label for="add-ingredient">Add a Gem:</label>
-        <input type="text" name="add-ingredient" @keydown.tab.prevent="addIng" v-model="another"/>
+        <input type="text" name="add-ingredient" v-model="another"/>
+        <div class="input-field">
+          <i class="material-icons tambah" @click.prevent="addIng">add</i>
+        </div>
       </div>
       <div class="field center-align">
         <p v-if="feedback" class="red-text">{{ feedback }}</p>
@@ -101,9 +104,19 @@
   }
   label {
     color: #fff;
-    font-size: 12px;
+    font-size: 13px;
   }
   .judul {
     font-family: 'Kaushan Script', cursive;
+  }
+  .tambah {
+    position: absolute;
+    right: 0;
+    bottom: 35px;
+    color: #000;
+    font-size: 1.4em;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: yellow;
   }
 </style>
