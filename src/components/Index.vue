@@ -33,7 +33,11 @@
               </li>
             </ul>
           </div>
-          <span class="btn-floating btn-large halfway-fab pink">
+          <span class="btn-floating btn-large halfway-fab pink" @click="WAGems(gem)">
+              <i class="material-icons edit">share</i
+            </router-link>
+          </span>
+          <span class="btn-floating btn-large halfway-fab orange tombolEdit">
             <router-link :to="{ name: 'EditGem', params: { gem_slug: gem.slug} }">
               <i class="material-icons edit">edit</i>
             </router-link>
@@ -52,45 +56,7 @@
     data () {
       return {
         gems: [],
-        seeds: [
-          {
-            title: '10 Things That Require Zero Talent',
-            slug: '10-things-that-require-zero-talent',
-            ingredients: [
-              'Being On Time',
-              'Work Ethic',
-              'Effort',
-              'Body Language',
-              'Energy',
-              'Attitude',
-              'Passion',
-              'Being Coachable',
-              'Doing Extra',
-              'Being Prepared'
-            ]
-          },
-          {
-            title: 'Discover Various Personality Type',
-            slug: 'discover-various-personality-type',
-            ingredients: [
-              'Sanguine',
-              'Phlegmatic',
-              'Choleric',
-              'Melancholic'
-            ]
-          },
-          {
-            title: 'Understand 5 Love Languages',
-            slug: 'understand-5-love-languages',
-            ingredients: [
-              'Words of Affirmation',
-              'Acts of Service',
-              'Receiving Gifts',
-              'Quality Time',
-              'Physical Touch'
-            ]
-          }
-        ]
+        seeds: []
       }
     },
     methods: {
@@ -112,7 +78,7 @@
           listGem += '• ' + item + '\n'
         })
 
-        let urlencodedtext = encodeURIComponent('*' + title + '* \n \n' + listGem + '\n \n' + '_Source:_ \n' + '*LifeGems* \n' + 'https://goo.gl/sT2qMT');
+        let urlencodedtext = encodeURIComponent('*' + title + '* \n \n' + listGem + '\n \n' + '_Brighten up someone\'s life today!_ \n \n' + '*LifeGems* \n' + 'www.lifegems.id');
         let whatsapp_url = "https://api.whatsapp.com/send?text=" + urlencodedtext;
         window.open(whatsapp_url, '_blank');
       }
@@ -126,6 +92,16 @@
             let gem = doc.data()
             gem.id = doc.id
             this.gems.push(gem)
+        })
+      })
+
+      db.collection('seeds').get()
+        .then(snapshot => {
+          snapshot.forEach(doc => {
+            // console.log(doc.data(), doc.id)
+            let gem = doc.data()
+            gem.id = doc.id
+            this.seeds.push(gem)
         })
       })
     }
@@ -182,5 +158,9 @@
     cursor: pointer;
     color: orange;
     font-size: 1.4em;
+  }
+
+  .tombolEdit {
+    margin-right: 70px;
   }
 </style>

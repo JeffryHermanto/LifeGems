@@ -9,16 +9,25 @@
         </div>
 
         <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Tech Stacks</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="https://vuejs.org" target="_blank">Vue.js</a></li>
-            <li><a class="grey-text text-lighten-3" href="https://materializecss.com/" target="_blank">Materialize</a></li>
-            <li><a class="grey-text text-lighten-3" href="https://firebase.google.com" target="_blank">Firebase</a></li>
-            <li><a class="grey-text text-lighten-3" href="https://fonts.google.com/" target="_blank">Google Fonts</a></li>
-            <li><a class="grey-text text-lighten-3" href="https://www.npmjs.com/package/slugify" target="_blank">Slugify</a></li>
-            <li><a class="grey-text text-lighten-3" href="https://www.npmjs.com/package/axios" target="_blank">Axios</a></li>
-            <li><a class="grey-text text-lighten-3" href="https://market.mashape.com/" target="_blank">Mashape API</a></li>
-          </ul>
+          <h5 class="white-text techStacks">Tech Stacks</h5>
+          <div class="col s6 techStacksItem">
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="https://atom.io/" target="_blank">Atom</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://nodejs.org/en/" target="_blank">Node.js</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://www.npmjs.com/" target="_blank">npm</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://www.npmjs.com/package/axios" target="_blank">Axios</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://www.npmjs.com/package/slugify" target="_blank">Slugify</a></li>
+            </ul>
+          </div>
+          <div class="col s6 techStacksItem">
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="https://vuejs.org" target="_blank">Vue.js</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://materializecss.com/" target="_blank">Materialize</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://firebase.google.com" target="_blank">Firebase</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://fonts.google.com/" target="_blank">Google Fonts</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://market.mashape.com/" target="_blank">Mashape API</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -102,5 +111,13 @@
 
   .whatsApp:hover {
     color: yellow
+  }
+
+  .techStacks {
+    margin-bottom: 0.5px
+  }
+
+  .techStacksItem li {
+    margin-left: -10px;
   }
 </style>
