@@ -18,6 +18,9 @@
               <i class="material-icons edit">share</i
             </router-link>
           </span>
+          <div class="card-action author">
+            <a :href="'http://' + gem.url" target="_blank">{{ gem.author }}</a>
+          </div>
         </div>
       </div>
 
@@ -42,6 +45,9 @@
               <i class="material-icons edit">edit</i>
             </router-link>
           </span>
+          <div class="card-action author">
+            <a :href="'http://' + gem.url" target="_blank">{{ gem.author }}</a>
+          </div>
         </div>
       </div>
     </div>
@@ -73,12 +79,14 @@
         let title = gem.title;
         let ingredients = gem.ingredients;
         let listGem = '';
+        let author = gem.author;
+        let url = gem.url;
 
         ingredients.map(item => {
           listGem += '• ' + item + '\n'
         })
 
-        let urlencodedtext = encodeURIComponent('*' + title + '* \n \n' + listGem + '\n \n' + '_Brighten up someone\'s life today!_ \n \n' + '*LifeGems* \n' + 'www.lifegems.id');
+        let urlencodedtext = encodeURIComponent('*' + title + '* \n \n' + listGem + '\n' + '~ ' + author + '\n' + url +'\n \n' + '_Brighten up someone\'s life today!_ \n \n' + '*LifeGems* \n' + 'www.lifegems.id');
         let whatsapp_url = "https://api.whatsapp.com/send?text=" + urlencodedtext;
         window.open(whatsapp_url, '_blank');
       }
@@ -162,5 +170,9 @@
 
   .tombolEdit {
     margin-right: 70px;
+  }
+
+  .author {
+    font-size: 10px
   }
 </style>

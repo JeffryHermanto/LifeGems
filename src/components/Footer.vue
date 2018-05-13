@@ -17,6 +17,7 @@
               <li><a class="grey-text text-lighten-3" href="https://www.npmjs.com/" target="_blank">npm</a></li>
               <li><a class="grey-text text-lighten-3" href="https://www.npmjs.com/package/axios" target="_blank">Axios</a></li>
               <li><a class="grey-text text-lighten-3" href="https://www.npmjs.com/package/slugify" target="_blank">Slugify</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://github.com/" target="_blank">GitHub</a></li>
             </ul>
           </div>
           <div class="col s6 techStacksItem">
@@ -26,6 +27,7 @@
               <li><a class="grey-text text-lighten-3" href="https://firebase.google.com" target="_blank">Firebase</a></li>
               <li><a class="grey-text text-lighten-3" href="https://fonts.google.com/" target="_blank">Google Fonts</a></li>
               <li><a class="grey-text text-lighten-3" href="https://market.mashape.com/" target="_blank">Mashape API</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://faq.whatsapp.com/en" target="_blank">WhatsApp API</a></li>
             </ul>
           </div>
         </div>

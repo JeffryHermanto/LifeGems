@@ -3,8 +3,16 @@
     <h2 class="indigo-text judul">Edit <b>{{ gem.title }}</b></h2>
     <form @submit.prevent="EditGem">
       <div class="field title">
-        <label for="title">Gems Title:</label>
+        <label for="title">Title:</label>
         <input type="text" name="title" v-model="gem.title" />
+      </div>
+      <div class="field">
+        <label for="title">Author:</label>
+        <input type="text" name="author" v-model="gem.author" />
+      </div>
+      <div class="field">
+        <label for="title">URL:</label>
+        <input type="text" name="url" v-model="gem.url" />
       </div>
       <div v-for="(ing, index) in gem.ingredients" :key="index" class="input-field">
         <input type="text" name="ingredient" v-model="gem.ingredients[index]" />
@@ -48,10 +56,24 @@
           db.collection('gems').doc(this.gem.id).update({
             title: this.gem.title,
             ingredients: this.gem.ingredients,
-            slug: this.gem.slug
+            slug: this.gem.slug,
+            author: this.gem.author,
+            url: this.gem.url
           }).then(() => {
             this.$router.push({ name: 'Index' })
           }).catch(err => {
+            console.log(err)
+          })
+
+          // CLONE FIREBASE
+          db.collection('clone').doc(this.gem.id).update({
+            title: this.gem.title,
+            ingredients: this.gem.ingredients,
+            slug: this.gem.slug,
+            author: this.gem.author,
+            url: this.gem.url
+          }).then(() => {})
+            .catch(err => {
             console.log(err)
           })
         } else {

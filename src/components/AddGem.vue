@@ -3,8 +3,16 @@
     <h2 class="center-align indigo-text judul">Add New Gems</h2>
     <form @submit.prevent="AddGem">
       <div class="field title">
-        <label for="title">Gems Title:</label>
+        <label for="title">Title:</label>
         <input type="text" name="title" v-model="title" />
+      </div>
+      <div class="field">
+        <label for="title">Author:</label>
+        <input type="text" name="author" v-model="author" />
+      </div>
+      <div class="field">
+        <label for="title">URL:</label>
+        <input type="text" name="url" v-model="url" />
       </div>
       <div v-for="(ing, index) in ingredients" :key="index" class="input-field">
         <input type="text" name="ingredient" v-model="ingredients[index]" />
@@ -37,7 +45,9 @@
         another: null,
         ingredients: [],
         feedback: null,
-        slug: null
+        slug: null,
+        author: null,
+        url: null
       }
     },
     methods: {
@@ -53,7 +63,9 @@
           db.collection('gems').add({
             title: this.title,
             ingredients: this.ingredients,
-            slug: this.slug
+            slug: this.slug,
+            author: this.author,
+            url: this.url
           }).then(() => {
             this.$router.push({ name: 'Index' })
           }).catch(err => {
@@ -64,7 +76,9 @@
           db.collection('clone').add({
             title: this.title,
             ingredients: this.ingredients,
-            slug: this.slug
+            slug: this.slug,
+            author: this.author,
+            url: this.url
           })
           .then(() => {})
           .catch(err => {
