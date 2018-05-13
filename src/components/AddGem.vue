@@ -59,6 +59,17 @@
           }).catch(err => {
             console.log(err)
           })
+
+          // CLONE FIREBASE
+          db.collection('clone').add({
+            title: this.title,
+            ingredients: this.ingredients,
+            slug: this.slug
+          })
+          .then(() => {})
+          .catch(err => {
+            console.log(err)
+          })
         } else {
           this.feedback = 'You must enter a Gems Title'
         }
