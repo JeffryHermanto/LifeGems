@@ -1,10 +1,10 @@
 <template>
-  <footer class="page-footer indigo darken-2">
+  <footer class="page-footer indigo darken-2 kaki">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Random Quotes</h5>
-          <p class="grey-text text-lighten-4">{{ quote }}</p>
+          <blockquote class="grey-text text-lighten-4">{{ quote }}</blockquote>
           <p class="grey-text text-lighten-4" v-if="author">~ {{ author }}</p>
         </div>
 
@@ -121,5 +121,9 @@
 
   .techStacksItem li {
     margin-left: -10px;
+  }
+
+  .kaki {
+    margin-top: 15px
   }
 </style>
