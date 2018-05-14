@@ -7,12 +7,16 @@
         <input type="text" name="title" v-model="title" />
       </div>
       <div class="field">
-        <label for="title">Author:</label>
+        <label for="author">Author:</label>
         <input type="text" name="author" v-model="author" />
       </div>
       <div class="field">
-        <label for="title">URL:</label>
+        <label for="url">URL:</label>
         <input type="text" name="url" v-model="url" />
+      </div>
+      <div class="field">
+        <label for="image">Image URL:</label>
+        <input type="text" name="image" v-model="image" />
       </div>
       <div v-for="(ing, index) in ingredients" :key="index" class="input-field">
         <input type="text" name="ingredient" v-model="ingredients[index]" />
@@ -47,7 +51,8 @@
         feedback: null,
         slug: null,
         author: null,
-        url: null
+        url: null,
+        image: null
       }
     },
     methods: {
@@ -65,7 +70,8 @@
             ingredients: this.ingredients,
             slug: this.slug,
             author: this.author,
-            url: this.url
+            url: this.url,
+            image: this.image
           }).then(() => {
             this.$router.push({ name: 'Index' })
           }).catch(err => {
@@ -78,7 +84,8 @@
             ingredients: this.ingredients,
             slug: this.slug,
             author: this.author,
-            url: this.url
+            url: this.url,
+            image: this.image
           })
           .then(() => {})
           .catch(err => {

@@ -7,12 +7,16 @@
         <input type="text" name="title" v-model="gem.title" />
       </div>
       <div class="field">
-        <label for="title">Author:</label>
+        <label for="author">Author:</label>
         <input type="text" name="author" v-model="gem.author" />
       </div>
       <div class="field">
-        <label for="title">URL:</label>
+        <label for="url">URL:</label>
         <input type="text" name="url" v-model="gem.url" />
+      </div>
+      <div class="field">
+        <label for="image">Image URL:</label>
+        <input type="text" name="image" v-model="gem.image" />
       </div>
       <div v-for="(ing, index) in gem.ingredients" :key="index" class="input-field">
         <input type="text" name="ingredient" v-model="gem.ingredients[index]" />
@@ -58,7 +62,8 @@
             ingredients: this.gem.ingredients,
             slug: this.gem.slug,
             author: this.gem.author,
-            url: this.gem.url
+            url: this.gem.url,
+            image: this.gem.image
           }).then(() => {
             this.$router.push({ name: 'Index' })
           }).catch(err => {
@@ -71,7 +76,8 @@
             ingredients: this.gem.ingredients,
             slug: this.gem.slug,
             author: this.gem.author,
-            url: this.gem.url
+            url: this.gem.url,
+            image: this.gem.image
           }).then(() => {})
             .catch(err => {
             console.log(err)

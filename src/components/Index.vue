@@ -5,6 +5,9 @@
       <!-- SEEDS -->
       <div class="col s12 m6 l4" v-for="gem in seeds" :key="gem.id">
         <div class="card kartu">
+          <div class="card-image">
+            <img class="gambarKartu" :src="gem.image">
+          </div>
           <div class="card-content">
             <i class="material-icons bintang">star</i>
             <h2 class="indigo-text">{{ gem.title }}</h2>
@@ -19,7 +22,7 @@
             </router-link>
           </span>
           <div class="card-action author">
-            <a :href="'http://' + gem.url" target="_blank">{{ gem.author }}</a>
+            <a :href="gem.url" target="_blank">{{ gem.author }}</a>
           </div>
         </div>
       </div>
@@ -27,6 +30,9 @@
       <!-- FIREBASE -->
       <div class="col s12 m6 l4" v-for="gem in gems" :key="gem.id">
         <div class="card kartu">
+          <div class="card-image">
+            <img class="gambarKartu" :src="gem.image">
+          </div>
           <div class="card-content">
             <i class="material-icons delete" @click="deleteGem(gem.id)">delete</i>
             <h2 class="indigo-text">{{ gem.title }}</h2>
@@ -46,7 +52,7 @@
             </router-link>
           </span>
           <div class="card-action author">
-            <a :href="'http://' + gem.url" target="_blank">{{ gem.author }}</a>
+            <a :href="gem.url" target="_blank">{{ gem.author }}</a>
           </div>
         </div>
       </div>
@@ -176,6 +182,11 @@
     font-size: 10px
   }
 
+  .gambarKartu {
+    object-fit: cover;
+    width: 100%;
+    height: 150px;
+  }
 
   /* MASONRY LAYOUT */
   .cards-container {

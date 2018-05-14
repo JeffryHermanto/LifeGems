@@ -1,8 +1,14 @@
 <template>
   <div id="app">
-    <Navbar />
-    <router-view/>
-    <Footer />
+    <body class="Site">
+      <header>
+        <Navbar />
+      </header>
+      <main class="Site-content">
+        <router-view/>
+      </main>
+      <Footer />
+    </body>
   </div>
 </template>
 
@@ -20,5 +26,13 @@
 </script>
 
 <style>
+  .Site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
 
+  .Site-content {
+    flex: 1;
+  }
 </style>
