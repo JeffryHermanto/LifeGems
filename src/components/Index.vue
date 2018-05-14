@@ -1,6 +1,6 @@
 <template>
   <div class="index container">
-    <div class="row">
+    <div class="cards-container">
 
       <!-- SEEDS -->
       <div class="col s12 m6 l4" v-for="gem in seeds" :key="gem.id">
@@ -124,9 +124,6 @@
   }
 
   .index {
-    /* display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: 30px; */
     margin-top: 60px;
   }
 
@@ -139,7 +136,8 @@
   }
 
   .index .ingredients {
-    margin: 30px auto;
+    margin-top: 30px;
+    margin-bottom: 7px;
   }
 
   .index .ingredients li {
@@ -157,6 +155,8 @@
 
   .kartu {
     margin-bottom: 60px;
+    margin-left: 10px;
+    margin-right: 10px
   }
 
   .index .bintang {
@@ -174,5 +174,42 @@
 
   .author {
     font-size: 10px
+  }
+
+
+  /* MASONRY LAYOUT */
+  .cards-container {
+    column-break-inside: avoid;
+  }
+  .cards-container .card {
+    display: inline-block;
+    overflow: visible;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .cards-container {
+      -webkit-column-count: 1;
+      -moz-column-count: 1;
+      column-count: 1;
+      padding-left: 11px;
+      padding-right: 11px
+    }
+  }
+  @media only screen and (min-width: 601px) {
+    .cards-container {
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+    }
+  }
+  @media only screen and (min-width: 993px) {
+    .cards-container {
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      column-count: 3;
+    }
+  }
+  .text-center {
+    text-align: center;
   }
 </style>
