@@ -1,5 +1,12 @@
 <template>
   <div class="index container">
+
+    <!-- PRELOADER -->
+    <div class="progress" v-if="isLoading">
+      <div class="indeterminate"></div>
+    </div>
+
+    <!-- CARDS -->
     <div class="cards-container">
 
       <!-- SEEDS -->
@@ -68,7 +75,8 @@
     data () {
       return {
         gems: [],
-        seeds: []
+        seeds: [],
+        isLoading: true
       }
     },
     methods: {
@@ -116,6 +124,7 @@
             let gem = doc.data()
             gem.id = doc.id
             this.seeds.push(gem)
+            this.isLoading = false
         })
       })
     }
