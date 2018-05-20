@@ -9,7 +9,15 @@
         </div>
 
         <div class="col l4 offset-l2 s12">
-          <h5 class="white-text techStacks">Tech Stacks</h5>
+          <h5 class="white-text techStacks">What is LifeGems?</h5>
+          <p>
+            Collection of inspirations, motivations, summaries, & tips for you to keep moving forward in life no matter what.
+            You can contribute & share your life gems too!
+          </p>
+          <p>
+            <em>Brighten up someone's life today!</em>
+          </p>
+          <!-- <h5 class="white-text techStacks">TechStacks</h5>
           <div class="col s6 techStacksItem">
             <ul>
               <li><a class="grey-text text-lighten-3" href="https://atom.io/" target="_blank">Atom</a></li>
@@ -29,7 +37,7 @@
               <li><a class="grey-text text-lighten-3" href="https://market.mashape.com/" target="_blank">Mashape API</a></li>
               <li><a class="grey-text text-lighten-3" href="https://faq.whatsapp.com/en" target="_blank">WhatsApp API</a></li>
             </ul>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -95,7 +103,7 @@
     methods: {
       whatsApp () {
         // Message WA
-        var urlencodedtext = encodeURIComponent("Halo Jeffry, saya ingin diskusi lebih lanjut mengenai sebuah project...");
+        var urlencodedtext = encodeURIComponent("Hello Jeffry, I want to discuss about...");
         // Kirim WA
         var whatsappphonenumber = 6282177771078; // Jeffry Hermanto
         var whatsapp_url = "https://api.whatsapp.com/send?phone=" + whatsappphonenumber + "&text=" + urlencodedtext;
