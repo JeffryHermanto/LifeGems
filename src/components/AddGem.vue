@@ -73,7 +73,7 @@
             url: this.url,
             image: this.image
           }).then(() => {
-            this.$router.push({ name: 'Index' })
+            this.$router.push({ name: 'Contributions' })
           }).catch(err => {
             console.log(err)
           })

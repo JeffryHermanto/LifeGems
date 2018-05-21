@@ -5,7 +5,7 @@
         <Navbar />
       </header>
       <main class="Site-content">
-        <router-view/>
+        <router-view />
       </main>
       <Footer />
     </body>
@@ -21,6 +21,11 @@
     components: {
       Navbar,
       Footer
+    },
+    data () {
+      return {
+
+      }
     }
   }
 </script>

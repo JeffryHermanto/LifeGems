@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
+import Contributions from '@/components/Contributions'
 import AddGem from '@/components/AddGem'
 import EditGem from '@/components/EditGem'
 
@@ -12,6 +13,11 @@ export default new Router({
     path: '/',
     name: 'Index',
     component: Index
+  },
+  {
+    path: '/contributions',
+    name: 'Contributions',
+    component: Contributions
   },
   {
     path: '/add-gem',

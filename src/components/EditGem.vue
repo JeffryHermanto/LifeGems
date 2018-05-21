@@ -66,7 +66,7 @@
             image: this.gem.image
           }).then(() => {
             this.$router.push({
-              name: 'Index'
+              name: 'Contributions'
             })
           }).catch(err => {
             console.log(err)

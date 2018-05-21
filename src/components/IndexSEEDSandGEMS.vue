@@ -33,19 +33,37 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- LINK TO CONTRIBUTIONS -->
-    <div class="cards-container hide-on-med-and-up">
-      <div class="col s12 m6 l4">
-        <div class="card kontribusi">
-          <router-link to="/contributions" class="btn">Go To Contributions
-            <i class="material-icons right">keyboard_arrow_right</i>
-          </router-link>
+      <!-- FIREBASE -->
+      <div class="col s12 m6 l4" v-for="gem in gems" :key="gem.id">
+        <div class="card kartu">
+          <div class="card-image">
+            <img class="gambarKartu" :src="gem.image">
+          </div>
+          <div class="card-content">
+            <i class="material-icons delete" @click="deleteGem(gem.id)">delete</i>
+            <h2 class="indigo-text">{{ gem.title }}</h2>
+            <ul class="ingredients">
+              <li v-for="(ing, index) in gem.ingredients" :key="index">
+                <span class="chip">{{ ing }}</span>
+              </li>
+            </ul>
+          </div>
+          <span class="btn-floating btn-large halfway-fab pink" @click="WAGems(gem)">
+              <i class="material-icons edit">share</i
+            </router-link>
+          </span>
+          <span class="btn-floating btn-large halfway-fab orange tombolEdit">
+            <router-link :to="{ name: 'EditGem', params: { gem_slug: gem.slug} }">
+              <i class="material-icons edit">edit</i>
+            </router-link>
+          </span>
+          <div class="card-action author">
+            <a :href="gem.url" target="_blank">{{ gem.author }}</a>
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -62,6 +80,15 @@
       }
     },
     methods: {
+      deleteGem (id) {
+        // delete doc from firebase
+        db.collection('gems').doc(id).delete()
+          .then(() => {
+            this.gems = this.gems.filter(gem => {
+              return gem.id !== id
+          })
+        })
+      },
       WAGems (gem) {
         let title = gem.title;
         let ingredients = gem.ingredients;
@@ -80,6 +107,16 @@
     },
     created () {
       // fetch data from the firestore
+      db.collection('gems').get()
+        .then(snapshot => {
+          snapshot.forEach(doc => {
+            // console.log(doc.data(), doc.id)
+            let gem = doc.data()
+            gem.id = doc.id
+            this.gems.push(gem)
+        })
+      })
+
       db.collection('seeds').get()
         .then(snapshot => {
           snapshot.forEach(doc => {
@@ -137,12 +174,6 @@
     margin-right: 10px
   }
 
-  .kontribusi {
-    margin-bottom: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
   .index .bintang {
     position: absolute;
     top: 4px;
@@ -165,7 +196,6 @@
     width: 100%;
     height: 150px;
   }
-
 
   /* MASONRY LAYOUT */
   .cards-container {

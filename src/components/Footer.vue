@@ -11,8 +11,8 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text techStacks">What is LifeGems?</h5>
           <p>
-            Collection of inspirations, motivations, summaries, & tips for you to keep moving forward in life no matter what.
-            You can contribute & share your life gems too!
+            A collection of inspirations, motivations, summaries, &amp; tips for you to keep moving forward in life no matter what.
+            You can contribute &amp; share your life gems too!
           </p>
           <p>
             <em>Brighten up someone's life today!</em>
