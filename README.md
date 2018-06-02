@@ -1,21 +1,16 @@
-# lifegems
+# LifeGems
 
-> A Vue.js project
+> A site for us to get inspired & keep moving forward in life no matter what.
 
-## Build Setup
+**Visit Project at [www.lifegems.id](https://www.lifegems.id)**
 
-``` bash
-# install dependencies
-npm install
+![LifeGems](http://jhproject.id/img/portfolio/LifeGemsPromoWide.jpg)
 
-# serve with hot reload at localhost:8080
-npm run dev
+#### Jeffry Hermanto _jeffryhermanto@gmail.com_
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+[Facebook](https://www.facebook.com/jeffryhermanto) |
+[Instagram](https://www.instagram.com/jeffryhermanto) |
+[Twitter](https://www.twitter.com/jeffryhermanto) |
+[LinkedIn](https://www.linkedin.com/in/jeffryhermanto) |
+[YouTube](https://www.youtube.com/jeffryhermanto) |
+[GitHub](https://github.com/jeffryhermanto)
