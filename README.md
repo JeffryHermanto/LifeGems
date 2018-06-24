@@ -4,7 +4,7 @@
 
 **Visit Project at [www.lifegems.id](https://www.lifegems.id)**
 
-![LifeGems](http://jhproject.id/img/portfolio/LifeGemsPromoWide.jpg)
+![LifeGems](http://jhproject.id/images/portfolio/LifeGems.jpg)
 
 #### Jeffry Hermanto _jeffryhermanto@gmail.com_
 
