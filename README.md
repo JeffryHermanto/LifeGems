@@ -2,9 +2,9 @@
 
 > A site for us to get inspired & keep moving forward in life no matter what.
 
-**Visit Project at [www.lifegems.id](https://www.lifegems.id)**
+**Visit Project at [https://bit.ly/lifegems](https://bit.ly/lifegems)**
 
-![LifeGems](http://jhproject.id/images/portfolio/LifeGems.jpg)
+![screenshot](screenshot.jpg)
 
 #### Jeffry Hermanto _jeffryhermanto@gmail.com_
 
